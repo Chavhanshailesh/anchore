@@ -17,7 +17,7 @@ pipeline{
         stage('Docker Image Scanning'){
             steps{
                 echo "***********Scanning Docker Images**********"
-				writeFile file: 'anchore_images', text: ${IMAGE_NAME}:${VERSION} ${WORKSPACE}/Dockerfile
+				writeFile file: 'anchore_images', text: "${IMAGE_NAME}:${VERSION} ${WORKSPACE}/Dockerfile"
                 anchore name: 'anchore_images'	
             }
         }					
