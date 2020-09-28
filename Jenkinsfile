@@ -21,7 +21,7 @@ pipeline{
                 echo "***********Scanning Docker Images**********"
 				//writeFile file: 'anchore_images', text: "${IMAGE_NAME}:${VERSION} ${WORKSPACE}/Dockerfile"
                 //anchore name: 'anchore_images'
-                writeFile file: 'anchore_images', text: "${IMAGE}"
+                writeFile file: 'anchore_images', text: "${NAME}"
                 anchore name: 'anchore_images'
             }
         }					
