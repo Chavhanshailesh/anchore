@@ -5,7 +5,7 @@ pipeline{
 				Tag = 'snapshot'
 				VERSION = "${BUILD_ID}"//docker image version for develope branch
 				IMAGE_NAME = 'test-scanning'
-                NAME='alpine:3.7'				
+                NAME='alpine:3.9'				
     }
     stages{
 	
