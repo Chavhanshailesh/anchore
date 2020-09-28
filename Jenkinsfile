@@ -3,7 +3,7 @@ pipeline{
     environment{
 				
 				Tag = 'snapshot'
-				VERSION = "-${BUILD_ID}"//docker image version for develope branch
+				VERSION = "${BUILD_ID}"//docker image version for develope branch
 				IMAGE_NAME = 'test-scanning'				
     }
     stages{
