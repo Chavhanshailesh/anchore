@@ -13,7 +13,7 @@ pipeline{
             steps{
 				// Build the docker image using a Dockerfile
 				sh "docker build . -t ${IMAGE_NAME}:${VERSION}"
-                sh "docker build $NAME"
+                sh "docker pull $NAME"
             }
         }
         stage('Docker Image Scanning'){
