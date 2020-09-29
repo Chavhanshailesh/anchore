@@ -11,7 +11,7 @@ pipeline{
 	
         stage('Docker Build'){
             steps{
-				Build the docker image using a Dockerfile
+				//Build the docker image using a Dockerfile
 				sh "docker build . -t ${IMAGE_NAME}:${VERSION}"
                 //sh "docker pull $NAME"
             }
