@@ -19,11 +19,11 @@ pipeline{
         stage('Docker Image Scanning'){
             steps{
                 echo "***********Scanning Docker Images**********"
-				// writeFile file: 'anchore_images', text: "${IMAGE_NAME}:${VERSION} ${WORKSPACE}/Dockerfile"
-                // anchore name: 'anchore_images'
+				writeFile file: 'anchore_images', text: "docker.io/${IMAGE_NAME}:${VERSION} ${WORKSPACE}/Dockerfile"
+                anchore name: 'anchore_images'
                 // writeFile file: 'anchore_images', text: "${NAME}"
                 // anchore name: 'anchore_images'
-                sh 'curl -s https://ci-tools.anchore.io/inline_scan-v0.3.3 | bash -s -- -d ./Dockerfile -r ${IMAGE_NAME}:${VERSION}'
+                //sh 'curl -s https://ci-tools.anchore.io/inline_scan-v0.3.3 | bash -s -- -d ./Dockerfile -r ${IMAGE_NAME}:${VERSION}'
             }
         }					
 	}
