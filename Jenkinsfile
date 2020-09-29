@@ -23,7 +23,7 @@ pipeline{
                 // anchore name: 'anchore_images'
                 // writeFile file: 'anchore_images', text: "${NAME}"
                 // anchore name: 'anchore_images'
-                sh 'curl -s https://ci-tools.anchore.io/inline_scan-v0.3.3 | bash -s -- -d ./Dockerfile -b ./.anchore_policy.json ${IMAGE_NAME}:${VERSION}'
+                sh 'curl -s https://ci-tools.anchore.io/inline_scan-v0.3.3 | bash -s -- -d ./Dockerfile -r ${IMAGE_NAME}:${VERSION}'
             }
         }					
 	}
