@@ -2,12 +2,11 @@ pipeline{
     agent any
     environment{
         VERSION = "${BUILD_ID}"//docker image version for develope branch
-        NAME='alpine:3.7'				
+        NAME='alpine:3.9'				
     }
     stages{
         stage('Docker Build'){
             steps{
-				//Build the docker image using a Dockerfile
                 sh "docker pull $NAME"
             }
         }
